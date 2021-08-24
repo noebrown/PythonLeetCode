@@ -1,0 +1,23 @@
+class Solution(object):
+    def maxSubArray(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        curMax = nums[0]
+        maxEnd = 0
+        
+        for i in range(0, len(nums)) : 
+            maxEnd += nums[i]
+            if maxEnd < 0:
+                maxEnd = 0
+                
+            elif (curMax < maxEnd) :
+                curMax = maxEnd
+                
+            
+        return curMax
+        
+        # 53.Maximum Subarray question LeetCode
+        # Given an integer array nums, find the contiguous subarray (containing at least one number) 
+        # which has the largest sum and return its sum.
